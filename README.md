@@ -2,7 +2,7 @@
 
 ## 简介
 
-JPMovieWriter_Demo：可暂停、续录、定时、带滤镜美颜的录制器，另附GIF制作。
+**JPMovieWriter**是基于`GPUImageMovieWriter`改造的录制器，可暂停、续录、定时、且带有滤镜美颜，另附GIF制作。
 
 ![](https://github.com/Rogue24/JPCover/raw/master/JPMovieWriter_Demo/JPMovieWriter_0.gif)
 
