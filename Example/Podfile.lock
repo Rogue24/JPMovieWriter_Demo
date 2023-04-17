@@ -1,0 +1,64 @@
+PODS:
+  - GPUImage_Local (0.1.0):
+    - GPUImage_Local/Resources (= 0.1.0)
+    - GPUImage_Local/Source (= 0.1.0)
+  - GPUImage_Local/Resources (0.1.0)
+  - GPUImage_Local/Source (0.1.0)
+  - JPBasic/JPProgressHUD (0.1.8):
+    - SVProgressHUD
+  - JPCrop (0.2.2)
+  - JPImageresizerView (1.10.2)
+  - Kingfisher (7.4.1)
+  - pop (1.0.12)
+  - SQLiteRepairKit (1.2.2):
+    - WCDBOptimizedSQLCipher (~> 1.2.0)
+  - SVProgressHUD (2.2.5)
+  - WCDB.swift (1.0.8.2):
+    - SQLiteRepairKit (~> 1.2.0)
+    - WCDBOptimizedSQLCipher (~> 1.2.0)
+  - WCDBOptimizedSQLCipher (1.2.1)
+  - YYText (1.0.7)
+
+DEPENDENCIES:
+  - GPUImage_Local (from `./GPUImage_Local`)
+  - JPBasic/JPProgressHUD
+  - JPCrop
+  - JPImageresizerView
+  - Kingfisher (~> 7.4.1)
+  - pop
+  - WCDB.swift (~> 1.0.8.2)
+  - YYText
+
+SPEC REPOS:
+  trunk:
+    - JPBasic
+    - JPCrop
+    - JPImageresizerView
+    - Kingfisher
+    - pop
+    - SQLiteRepairKit
+    - SVProgressHUD
+    - WCDB.swift
+    - WCDBOptimizedSQLCipher
+    - YYText
+
+EXTERNAL SOURCES:
+  GPUImage_Local:
+    :path: "./GPUImage_Local"
+
+SPEC CHECKSUMS:
+  GPUImage_Local: 6dfb7825ad164668b442e05d4b5cda45ba8d0bf0
+  JPBasic: 5a0459823fd51d7a02aea924227e971a0d8778b3
+  JPCrop: 6599828ff2b0fdaa16f3d1c03ba55a947c402578
+  JPImageresizerView: 59bddb56a3b826e7309f11f98a6d3b69ca4d7dec
+  Kingfisher: cd762a593a61b2fbecf7645c00f9a801a3ebfc9c
+  pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
+  SQLiteRepairKit: 35aaae5a8838adb85f5b1eb4d796055be6060a4b
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  WCDB.swift: 05d509d7a0e60fb6e11c34eb7e4027c0fab5849f
+  WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
+
+PODFILE CHECKSUM: 6c6c58645f1b55e70853024a0f2a192ab08fb5f6
+
+COCOAPODS: 1.11.3
