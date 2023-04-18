@@ -496,11 +496,11 @@ static BOOL isAlive_;
         if ([GPUImageContext supportsFastTextureUpload]) {
             if (self->_renderTexture) {
                 CFRelease(self->_renderTexture);
-                self->_renderTexture = 0;
+                self->_renderTexture = NULL;
             }
             if (self->_renderTarget) {
                 CVPixelBufferRelease(self->_renderTarget);
-                self->_renderTarget = 0;
+                self->_renderTarget = NULL;
             }
         }
         
@@ -591,6 +591,8 @@ static BOOL isAlive_;
             // 有可能已经被别处释放了
             if (sSelf->_renderTarget) {
                 CVPixelBufferUnlockBaseAddress(pixel_buffer, 0);
+            } else {
+                NSLog(@"jpjpjp ⚠️“_renderTarget”可能已经被别处释放了，请停止录制并检查代码！");
             }
         } else {
             CVPixelBufferUnlockBaseAddress(pixel_buffer, 0);
