@@ -371,7 +371,7 @@ private extension RecordViewController {
     
     func confirmQuit() {
         let isMoreThanOneSecond = (writer.recordDuration - recordedDuration) >= 1
-        let alertCtr = UIAlertController(title: "确定退出？", message: isMoreThanOneSecond ? nil : "录制不足1秒不能保存", preferredStyle: .alert)
+        let alertCtr = UIAlertController.build(.alert, title: "确定退出？", message: isMoreThanOneSecond ? nil : "录制不足1秒不能保存")
         
         if isMoreThanOneSecond {
             alertCtr.addAction("保存并退出") {
@@ -415,7 +415,10 @@ private extension RecordViewController {
             } faild: { error in
                 JPProgressHUD.dismiss()
                 
-                UIAlertController(title: "录制失败", message: (error as? NSError)?.localizedDescription, preferredStyle: .alert)
+                UIAlertController
+                    .build(.alert,
+                           title: "录制失败",
+                           message: (error as? NSError)?.localizedDescription)
                     .addAction("重试") {
                         self.quit(isSave: true)
                     }
@@ -480,7 +483,8 @@ extension RecordViewController: JPMovieWriterDelegate {
                 JPProgressHUD.dismiss()
                 self.controlBar.isEnabled = true
                 
-                UIAlertController(title: "录制完成", message: nil, preferredStyle: .alert)
+                UIAlertController
+                    .build(.alert, title: "录制完成")
                     .addAction("保存") {
                         JPProgressHUD.show()
                         Asyncs.async {
@@ -507,7 +511,10 @@ extension RecordViewController: JPMovieWriterDelegate {
             JPProgressHUD.dismiss()
             self.controlBar.isEnabled = true
             
-            UIAlertController(title: "录制失败", message: (kError as? NSError)?.localizedDescription, preferredStyle: .alert)
+            UIAlertController
+                .build(.alert,
+                       title: "录制失败",
+                       message: (kError as? NSError)?.localizedDescription)
                 .addAction("重试") {
                     self.quit(isSave: true)
                 }

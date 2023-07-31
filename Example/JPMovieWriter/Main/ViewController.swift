@@ -150,7 +150,8 @@ extension ViewController {
 // MARK: - UIRespond Action
 extension ViewController {
     @objc func startAction() {
-        UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        UIAlertController
+            .build(.actionSheet)
             .addAction("开始录制") { self.startRecord() }
             .addAction("从相册导入") { self.importAlbumVideo() }
             .addCancel()
@@ -186,15 +187,16 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         let cache = works.cache
         
         guard File.manager.fileExists(cache.recordCachePath) else {
-            UIAlertController(title: "文件已丢失！", message: nil, preferredStyle: .alert)
+            UIAlertController
+                .build(.alert, title: "文件已丢失！")
                 .addDestructive("删除") { self.deleteWorks(works)}
                 .addCancel()
                 .present(from: self)
             return
         }
         
-        let alertCtr = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-            .addAction("播放") { self.tryPlay(at: indexPath.item) }
+        let alertCtr = UIAlertController.build(.actionSheet)
+        alertCtr.addAction("播放") { self.tryPlay(at: indexPath.item) }
         
         if works.second <= (RecordConfig.videoMaxDuration - 1) {
             alertCtr
@@ -266,7 +268,8 @@ private extension ViewController {
     func tryPlay(at index: Int) {
         let works = worksCMs[index].works
         tryPlay(withPath: works.recordCachePath) {
-            UIAlertController(title: "文件不存在！", message: nil, preferredStyle: .alert)
+            UIAlertController
+                .build(.alert, title: "文件不存在！")
                 .addDestructive("删除") { self.deleteWorks(works)}
                 .addCancel()
                 .present(from: self)

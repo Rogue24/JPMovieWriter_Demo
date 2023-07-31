@@ -9,6 +9,10 @@
 import UIKit
 
 extension UIAlertController {
+    static func build(_ preferredStyle: UIAlertController.Style, title: String? = nil, message: String? = nil) -> UIAlertController {
+        UIAlertController(title: title, message: message, preferredStyle: preferredStyle)
+    }
+    
     @discardableResult
     func addAction(_ title: String?,
                    handler: (() -> Void)?) -> UIAlertController {

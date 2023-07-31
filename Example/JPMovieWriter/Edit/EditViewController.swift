@@ -131,7 +131,8 @@ class EditViewController: UIViewController {
     }
     
     @objc func editImage() {
-        UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        UIAlertController
+            .build(.actionSheet)
             .addAction("裁剪") {
                 guard let image = self.imageView.image else { return }
                 let vc = CropViewController(image: image) { [weak self] cropedImage in
